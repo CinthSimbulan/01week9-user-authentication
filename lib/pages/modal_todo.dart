@@ -4,6 +4,7 @@
   Description: Sample todo app with Firebase 
 */
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../models/todo_model.dart';
@@ -56,16 +57,21 @@ class TodoModal extends StatelessWidget {
         switch (type) {
           case 'Add':
             {
-              // Instantiate a todo objeect to be inserted, default userID will be 1, the id will be the next id in the list
-              Todo temp = Todo(
-                  userId: 1,
-                  completed: false,
-                  title: _formFieldController.text);
-
-              context.read<TodoListProvider>().addTodo(temp);
-
-              // Remove dialog after adding
-              Navigator.of(context).pop();
+              // Access the collection reference
+              CollectionReference todosCollection =
+                  FirebaseFirestore.instance.collection('todos');
+              // Add the document to the collection with explicitly included ID
+              todosCollection.add({
+                'userId': 1,
+                'title': _formFieldController.text,
+                'completed': false,
+              }).then((docRef) {
+                // Get the auto-generated ID
+                String autoId = docRef.id;
+                // Update the document with the auto-generated ID
+                docRef.update({'id': autoId});
+                Navigator.pop(context);
+              });
               break;
             }
           case 'Edit':

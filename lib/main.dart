@@ -6,6 +6,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:week9_authentication/providers/users_provider.dart';
 import 'firebase_options.dart';
 import 'pages/home_page.dart';
 import 'providers/todo_provider.dart';
@@ -21,9 +22,10 @@ Future<void> main() async {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: ((context) => TodoListProvider())),
-        ChangeNotifierProvider(create: ((context) => UserAuthProvider()))
+        ChangeNotifierProvider(create: ((context) => UserAuthProvider())),
+        ChangeNotifierProvider(create: ((context) => UsersListProvider())),
       ],
-      child: MyApp(),
+      child: const MyApp(),
     ),
   );
 }

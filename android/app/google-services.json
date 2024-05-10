@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "97869778981",
-    "project_id": "week9-user-authentication",
-    "storage_bucket": "week9-user-authentication.appspot.com"
+    "project_number": "216982144122",
+    "project_id": "auth-ed5cb",
+    "storage_bucket": "auth-ed5cb.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:97869778981:android:ed5cc80da6f5f59089efcc",
+        "mobilesdk_app_id": "1:216982144122:android:8e700f2c7f5afa3987a7c3",
         "android_client_info": {
           "package_name": "com.example.week9_authentication"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyC6heRq0Ed-GWb_Dnfi67VRz4QTeJRHp08"
+          "current_key": "AIzaSyDi683zGYc7Gg43dOq9LGXdcR5AcEhraAw"
         }
       ],
       "services": {

@@ -130,13 +130,13 @@ class _TodoPageState extends State<TodoPage> {
                     builder: (context) => const UserDetailsPage()));
           },
         ),
-        ListTile(
-          title: const Text('Todo List'),
-          onTap: () {
-            Navigator.pop(context);
-            Navigator.pushNamed(context, "/");
-          },
-        ),
+        // ListTile(
+        //   title: const Text('Todo List'),
+        //   onTap: () {
+        //     Navigator.pop(context);
+        //     Navigator.pushNamed(context, "/");
+        //   },
+        // ),
         ListTile(
           title: const Text('Logout'),
           onTap: () {
