@@ -60,7 +60,7 @@ class TodoModal extends StatelessWidget {
               // Access the collection reference
               CollectionReference todosCollection =
                   FirebaseFirestore.instance.collection('todos');
-              // Add the document to the collection with explicitly included ID
+              // Add the document to the collection with explicitly included ID to add then update
               todosCollection.add({
                 'userId': 1,
                 'title': _formFieldController.text,
